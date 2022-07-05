@@ -15,8 +15,18 @@ az vm create -n groupe3S -g groupe3TCCS \
 --public-ip-address groupe3Ip \
 --admin-username groupe3 --admin-password groupe3GRE2022! --ssh-key-values @~/.ssh/id_rsa.pub 
 
+
 ssh groupe3@groupe3Ip.westeurope.cloudapp.azure.com
 mdp : groupe3GRE2022!
+
+Installations docker / lazydocker
+sudo apt update && sudo apt upgrade -y
+sudo apt install docker.io mongodb-clients python3-pip
+# lazydocker
+# https://github.com/jesseduffield/lazydocker
+# Ajout group docker
+sudo usermod -aG docker $USER
+
 
 connexion à Mongodb
 mongo mongodb://172.17.0.2:27017
